@@ -1,0 +1,4 @@
+comp
+mouse
+laptop
+microphone
