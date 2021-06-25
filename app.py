@@ -1,12 +1,21 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/<test>/')
-def homepage(test):
-    #test = test.upper()
-    f = open('goods.txt', 'r+', encoding='utf-8')
+@app.route('/')
+def homepage():
+    f = open('goods.txt', 'r', encoding='utf-8')
     txt = f.readlines()
-    return render_template('index.html', txt=txt)
+    return render_template('index.html', goods=txt)
+    
+@app.route('/add/', method=['POST'])
+def add():
+    good = request.form['good']
+    f = open('good.txt', 'a+', encoding='utf-8')
+    f.write(good + '\n')
+    f.close()
+    return """ 
+        <h1>Инвентарь пополнен</h1>
+        <a href='/'>Домой</a>
 
-app.run()
+    """

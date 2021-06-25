@@ -7,12 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Home</h2>
-    <div>This page is template</div>
+    <h2>Сайт инвентаризации</h2>
+    <form action="/add/" method="POST">
+        <input type="text" name='good'>
+        <button>Добавить</button>
+    </form>
     <ol>
         {% for good in goods %}
             <li>{{ good }}</li>
         {% endfor %}
     </ol>
+    
 </body>
 </html>
