@@ -1,4 +1,5 @@
 comp
 mouse
 laptop
-microphone
+microphonebag
+pencil

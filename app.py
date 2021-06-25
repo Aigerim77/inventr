@@ -8,14 +8,13 @@ def homepage():
     txt = f.readlines()
     return render_template('index.html', goods=txt)
     
-@app.route('/add/', method=['POST'])
+@app.route('/add/', methods=['POST'])
 def add():
     good = request.form['good']
-    f = open('good.txt', 'a+', encoding='utf-8')
+    f = open('goods.txt', 'a+', encoding='utf-8')
     f.write(good + '\n')
     f.close()
     return """ 
         <h1>Инвентарь пополнен</h1>
         <a href='/'>Домой</a>
-
-    """
+        """
