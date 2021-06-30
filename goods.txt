@@ -6,3 +6,4 @@ pencil
 pen
 device
 bag
+стул
